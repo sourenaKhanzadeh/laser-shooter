@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "include/player.h"
 
 #define SCREEN_W 600
 #define SCREEN_H 600
@@ -7,14 +8,18 @@
 
 using namespace sf;
 
-
+// Prototypes
 void handleEvents(RenderWindow *window);
+///////////////////////////////////////
+
 
 int main(){
   // Create the window
   VideoMode vm(SCREEN_W, SCREEN_H);
   RenderWindow window(vm, TITLE);
 
+  // Player
+  Player *p = new Player(&window, 10, 10);
 
 
   // mainloop
@@ -22,9 +27,14 @@ int main(){
       // get events
       handleEvents(&window);
 
+      window.clear();
+
+      p->update();
+
+      window.display();
 
   }
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 
