@@ -5,6 +5,7 @@
 
 // Player Object
 #include "include/player.h"
+#include "include/enemy.h"
 
 using namespace sf;
 
@@ -21,6 +22,7 @@ int main(){
 
   // Player
   Player *p = new Player(&window, 0, 0);
+  Enemy *e = new Enemy(&window, 0, 0);
 
 
   // mainloop
@@ -32,7 +34,8 @@ int main(){
 
       if(p != NULL)
         p->update();
-
+      if(e!=NULL)
+        e->update();
 
 
       window.display();

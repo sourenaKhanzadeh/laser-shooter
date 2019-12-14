@@ -36,7 +36,7 @@ void Player::draw(){
 
 void Player::fire(){
   ammo[0] = new Ammo(window, pos.x, pos.y, A_RAD);
-  ammo[0]->setPos(pos);
+  ammo[0]->setPos(pos + Vector2(radius/2, radius/2));
 }
 
 

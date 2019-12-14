@@ -9,14 +9,27 @@
 #include <SFML/Graphics.hpp>
 
 
-
-#define P_COLOR sf::Color::Red
-#define DEFAULT_VEL 10.f
-#define P_SPEED 1.25f
+// SYSTEM SETTINGS && ALIASES
 #define FPS 64
-
 #define Key(x) sf::Keyboard::isKeyPressed(sf::Keyboard::x)
 #define ORIGIN Vector2(0, 0)
+#define STOP Vector2(0, 0)
+
+// AMMO SETTINGS
+#define A_RAD 4
+#define ACCELERATION_FACTOR 1.58f
+#define A_DEFAULT_VEL 1.2f
+
+
+// PLAYER SETTINGS
+#define P_COLOR sf::Color::Red
+#define DEFAULT_VEL 5.f
+#define P_SPEED 1.25f
+
+// ENEMY SETTINGS
+#define E_WIDTH 10
+#define E_HEIGHT 10
+#define E_COLOR sf::Color::Green
 
 typedef sf::Vector2f Vector2;
 
