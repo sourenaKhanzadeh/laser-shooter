@@ -14,16 +14,22 @@ protected:
 
   float speed(){return DEFAULT_VEL * P_SPEED;};
 
-public:
   // abstrac methods
   void virtual draw(){};
   void virtual move(){};
   void virtual control(){};
+public:
 
   void update();
 
   GameObject(sf::RenderWindow *window, float x, float y);
 
+  // getters && setters
+  Vector2 getPos(){return pos;}
+  Vector2 getVel(){return vel;}
+
+  void setPos(Vector2 v){pos = v;}
+  void setVel(Vector2 v){vel = v;}
 };
 
 

@@ -17,6 +17,7 @@ int main(){
   // Create the window
   VideoMode vm(SCREEN_W, SCREEN_H);
   RenderWindow window(vm, TITLE);
+  window.setFramerateLimit(FPS);
 
   // Player
   Player *p = new Player(&window, 0, 0);

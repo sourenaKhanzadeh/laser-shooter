@@ -5,7 +5,8 @@ Ammo::Ammo(sf::RenderWindow *window, float x, float y, float rad):
 GameObject(window, x, y){
   this->radius =  rad;
 
-  Vector2 acelerate(ACCELERATION_FACTOR, ACCELERATION_FACTOR);
+  acelerate = Vector2(ACCELERATION_FACTOR, ACCELERATION_FACTOR);
+  vel = Vector2(A_DEFAULT_VEL, 0);
 }
 
 
@@ -26,8 +27,9 @@ void Ammo::draw(){
 
 
 void Ammo::move(){
-  pos += Vector2(0.1f, 0);
-  // vel.x *= acelerate.x;
+  pos += vel;
+  vel.x *= acelerate.x;
+
 
 }
 

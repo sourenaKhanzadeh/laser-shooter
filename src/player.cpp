@@ -4,17 +4,21 @@
 Player::Player(sf::RenderWindow *window, float x, float y, float rad):
 GameObject(window, x, y){
   this->radius = rad;
+  ammo = new Ammo*[1];
+  ammo[0] = NULL;
 }
 
 Player::~Player(){
   std::cout << "....Player Deleted...." << std::endl;
+  delete [] ammo;
 }
 
 void Player::move(){
   pos += vel;
-  if(ammo != NULL)
-    ammo->update();
-  // std::cout << pos.x << std::endl;
+  if(ammo[0] != NULL){
+    ammo[0]->update();
+    clamp(ammo);
+  }
 }
 
 
@@ -31,8 +35,16 @@ void Player::draw(){
 }
 
 void Player::fire(){
-  ammo = new Ammo(window, pos.x, pos.y, A_RAD);
+  ammo[0] = new Ammo(window, pos.x, pos.y, A_RAD);
+  ammo[0]->setPos(pos);
+}
 
+
+void Player::clamp(Ammo **ammo){
+  if( ammo[0]->getPos().x > SCREEN_W || ammo[0]->getPos().x <0){
+      delete ammo[0];
+      ammo[0] = NULL;
+  }
 }
 
 void Player::control(){
@@ -55,7 +67,7 @@ void Player::control(){
 
   }
 
-  if ( Key(Space) ){
+  if ( Key(Space)  && ammo[0] == NULL){
     fire();
   }
 

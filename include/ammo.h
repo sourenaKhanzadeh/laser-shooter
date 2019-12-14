@@ -5,7 +5,7 @@
 
 #define A_RAD 4
 #define ACCELERATION_FACTOR 1.58f
-#define A_DEFAULT_VEL 5
+#define A_DEFAULT_VEL 5.f
 
 class Ammo: public GameObject{
 private:

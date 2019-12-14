@@ -11,8 +11,9 @@
 
 
 #define P_COLOR sf::Color::Red
-#define DEFAULT_VEL 0.01f
+#define DEFAULT_VEL 10.f
 #define P_SPEED 1.25f
+#define FPS 64
 
 #define Key(x) sf::Keyboard::isKeyPressed(sf::Keyboard::x)
 #define ORIGIN Vector2(0, 0)
