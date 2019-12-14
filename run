@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-g++ -o out/main main.cpp player.cpp -lsfml-graphics -lsfml-window -lsfml-system
+g++ -o out/main main.cpp src/* -lsfml-graphics -lsfml-window -lsfml-system
 
 ./out/main

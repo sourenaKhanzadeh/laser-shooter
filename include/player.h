@@ -1,26 +1,28 @@
-#include <SFML/Graphics.hpp>
-
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "gameObject.h"
+#include "ammo.h"
+
 #define P_RAD 10.0f
-#define P_COLOR sf::Color::Red
 
-class Player{
+
+class Player: public GameObject{
 private:
-
-  int x;
-  int y;
-  sf::Color color = P_COLOR;
-  sf::RenderWindow *window;
   float radius;
+  Ammo *ammo = NULL;
 
   void draw();
+  void control();
+  void move();
+  void fire();
+
 public:
-  Player(sf::RenderWindow *window, int x, int y, float rad=P_RAD);
+  Player(sf::RenderWindow *window, float x, float y, float rad=P_RAD);
   ~Player();
-  void update();
+
 };
+
 
 
 
