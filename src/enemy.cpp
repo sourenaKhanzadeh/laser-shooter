@@ -64,7 +64,8 @@ void Enemy::control(){
   int waveC = rand() % 75;
   int target = rand() % 100;
 
-  if(waveA < target && waveB > target && *ammo == NULL)fire();
+  if(waveA < target && waveB > target && waveC < waveB
+    && *ammo == NULL)fire();
   //restrict enemy inside the boundry
   clamp();
 }
