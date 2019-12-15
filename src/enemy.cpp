@@ -4,11 +4,18 @@
 Enemy::Enemy(sf::RenderWindow *window, float x, float y, Vector2 size):
 GameObject(window, x, y){
     this->size = size;
+    this->health = 100.f;
     ammo = new Ammo*[1];
     ammo[0] = NULL;
 
-    pos = Vector2(SCREEN_W-E_WIDTH*2, 0);
+    pos = Vector2(x, y);
     vel = E_DEFAULT_VEL;
+}
+
+Enemy::~Enemy(){
+  std::cout << ">>>>Enemy Destroyed<<<<<" << std::endl;
+  delete [] ammo;
+  ammo = NULL;
 }
 
 void Enemy::draw(){
@@ -68,4 +75,27 @@ void Enemy::control(){
     && *ammo == NULL)fire();
   //restrict enemy inside the boundry
   clamp();
+}
+
+void Enemy::damage(float dmg){
+  health -= (health*dmg*this->dmg);
+  this->dmg++;
+}
+
+bool Enemy::destroy(){
+  return health <= 0;
+}
+
+void onCollision(Ammo *obj1, Enemy *obj2){
+
+  float dist = collision(obj1, obj2);
+
+  // std::cout << "distance: " << dist << "m." << std::endl;
+  if(dist < E_WIDTH){
+    std::cout << "....Collided..." << std::endl;
+    std::cout << "Enemy Health: " << obj2->getHealth();
+    obj2->damage(obj1->dmg());
+    std::cout << " AFTER: " << obj2->getHealth() << std::endl;
+
+  }
 }

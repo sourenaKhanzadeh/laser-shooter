@@ -20,6 +20,10 @@ public:
     Ammo(sf::RenderWindow *window, float x, float y, float rad=A_RAD, bool player=true);
     ~Ammo();
 
+      float dmg(){
+        return 0.3f;
+      }
+
     // getters && setters
     float getRadius(){return radius;}
 

@@ -34,7 +34,7 @@ typedef sf::Vector2f Vector2;
 // ENEMY SETTINGS
 #define E_WIDTH 20
 #define E_HEIGHT 20
-#define E_DEFUALT_NUM 1
+#define E_DEFUALT_NUM 4
 #define E_COLOR sf::Color::Green
 #define E_DEFAULT_VEL Vector2(0, 3)
 

@@ -34,6 +34,6 @@ public:
   void setColor(sf::Color c){color = c;}
 };
 
-void onCollision(GameObject *obj1, GameObject *obj2);
+float collision(GameObject *obj1, GameObject *obj2);
 
 #endif

@@ -17,6 +17,7 @@ int main(){
   // Create the window
   VideoMode vm(SCREEN_W, SCREEN_H);
   RenderWindow window(vm, TITLE);
+  //SET  FramerateLimit
   window.setFramerateLimit(FPS);
 
   // Create a stage
@@ -28,9 +29,7 @@ int main(){
       handleEvents(&window);
 
       window.clear();
-
       stage.update();
-
       window.display();
 
 
