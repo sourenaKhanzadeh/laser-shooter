@@ -1,11 +1,7 @@
 #include <iostream>
 
 // GAMEOBJECT
-#include "include/gameObject.h"
-
-// Player Object
-#include "include/player.h"
-#include "include/enemy.h"
+#include "include/stage.h"
 
 using namespace sf;
 
@@ -23,10 +19,8 @@ int main(){
   RenderWindow window(vm, TITLE);
   window.setFramerateLimit(FPS);
 
-  // Player
-  Player *p = new Player(&window, 0, 0);
-  Enemy *e = new Enemy(&window, 0, 0);
-
+  // Create a stage
+  Stage stage(&window);
 
   // mainloop
   while (window.isOpen()){
@@ -35,11 +29,7 @@ int main(){
 
       window.clear();
 
-      if(p != NULL)
-        p->update();
-      if(e!=NULL)
-        e->update();
-
+      stage.update();
 
       window.display();
 

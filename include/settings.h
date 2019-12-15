@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <time.h>
+#include <math.h>
 #include <SFML/Graphics.hpp>
 
 
@@ -19,7 +20,7 @@ typedef sf::Vector2f Vector2;
 
 // AMMO SETTINGS
 #define A_RAD 4
-#define ACCELERATION_FACTOR 1.58f
+#define ACCELERATION_FACTOR 1.10f
 #define A_DEFAULT_VEL 1.2f
 
 
@@ -27,10 +28,13 @@ typedef sf::Vector2f Vector2;
 #define P_COLOR sf::Color::Red
 #define DEFAULT_VEL 5.f
 #define P_SPEED 1.25f
+#define P_RAD 10.0f
+
 
 // ENEMY SETTINGS
-#define E_WIDTH 10
-#define E_HEIGHT 10
+#define E_WIDTH 20
+#define E_HEIGHT 20
+#define E_DEFUALT_NUM 1
 #define E_COLOR sf::Color::Green
 #define E_DEFAULT_VEL Vector2(0, 3)
 

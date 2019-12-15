@@ -4,8 +4,6 @@
 #include "gameObject.h"
 #include "ammo.h"
 
-#define P_RAD 10.0f
-
 
 class Player: public GameObject{
 private:
@@ -22,7 +20,13 @@ private:
 public:
   Player(sf::RenderWindow *window, float x, float y, float rad=P_RAD);
   ~Player();
-};
 
+
+  // getters && setters
+  float getRadius(){return radius;}
+
+  Ammo ** getAmmo(){return ammo;}
+
+};
 
 #endif
