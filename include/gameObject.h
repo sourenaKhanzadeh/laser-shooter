@@ -27,9 +27,11 @@ public:
   // getters && setters
   Vector2 getPos(){return pos;}
   Vector2 getVel(){return vel;}
+  sf::Color getColor(){return color;}
 
   void setPos(Vector2 v){pos = v;}
   void setVel(Vector2 v){vel = v;}
+  void setColor(sf::Color c){color = c;}
 };
 
 

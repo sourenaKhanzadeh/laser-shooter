@@ -6,6 +6,7 @@
 
 class Ammo: public GameObject{
 private:
+    bool player;
     float radius;
     Vector2 acelerate;
 
@@ -16,7 +17,7 @@ private:
     void destroy();
 
 public:
-    Ammo(sf::RenderWindow *window, float x, float y, float rad=A_RAD);
+    Ammo(sf::RenderWindow *window, float x, float y, float rad=A_RAD, bool player=true);
     ~Ammo();
 
 };

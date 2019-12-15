@@ -15,6 +15,9 @@ void handleEvents(RenderWindow *window);
 
 
 int main(){
+  // randomness
+  srand(time(NULL));
+
   // Create the window
   VideoMode vm(SCREEN_W, SCREEN_H);
   RenderWindow window(vm, TITLE);

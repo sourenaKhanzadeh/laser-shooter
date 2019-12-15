@@ -6,12 +6,14 @@
 #define TITLE "Squad"
 
 #include <iostream>
+#include <time.h>
 #include <SFML/Graphics.hpp>
 
 
 // SYSTEM SETTINGS && ALIASES
 #define FPS 64
 #define Key(x) sf::Keyboard::isKeyPressed(sf::Keyboard::x)
+typedef sf::Vector2f Vector2;
 #define ORIGIN Vector2(0, 0)
 #define STOP Vector2(0, 0)
 
@@ -30,8 +32,8 @@
 #define E_WIDTH 10
 #define E_HEIGHT 10
 #define E_COLOR sf::Color::Green
+#define E_DEFAULT_VEL Vector2(0, 3)
 
-typedef sf::Vector2f Vector2;
 
 
 

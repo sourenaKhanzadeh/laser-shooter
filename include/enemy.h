@@ -16,6 +16,7 @@ private:
 
     void clamp();
     void clamp(Ammo **ammo);
+    void fire();
 
 public:
     Enemy(sf::RenderWindow *window, float x, float y, Vector2 size=Vector2(E_WIDTH, E_HEIGHT));
