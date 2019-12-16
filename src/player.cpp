@@ -48,11 +48,12 @@ void Player::clamp(Ammo **ammo){
 }
 
 void Player::control(){
+  bool domain = pos.y < 0 || pos.y > SCREEN_H || pos.x < 0;
   if( Key(A) ){
     // Move Left
     vel.x=-speed();
   }
-  if( Key(W) ){
+  if( Key(W)){
     // Move Up
     vel.y=-speed();
 
@@ -72,10 +73,9 @@ void Player::control(){
   }
 
   if(!Key(S) && !Key(A) && !Key(D) && !Key(W)){
-    // movement stop
-    vel = ORIGIN;
-  }
-
+      // movement stop
+      vel = STOP;
+    }
 
 
 }

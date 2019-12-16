@@ -58,9 +58,9 @@ void Enemy::clamp(Ammo **ammo){
 }
 
 void Enemy::fire(){
-    ammo[0] = new Ammo(window, pos.x, pos.y, A_RAD, false);
-    ammo[0]->setPos(pos + Vector2(-size.x/2, -size.y/2));
-    ammo[0]->setColor(E_COLOR);
+    *ammo = new Ammo(window, pos.x, pos.y, A_RAD, false);
+    (*ammo)->setPos(pos + Vector2(-size.x/2, -size.y/2));
+    (*ammo)->setColor(E_COLOR);
 }
 
 void Enemy::control(){
@@ -79,7 +79,7 @@ void Enemy::control(){
     vel.x-=10;
   }
   else if(pos.x <= SCREEN_W && waveA>waveB && waveB>target){
-    vel.x+=10;
+    vel.x+=20;
   }
   else{
     vel.x = 0;
