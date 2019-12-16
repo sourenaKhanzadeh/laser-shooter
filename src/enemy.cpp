@@ -73,6 +73,17 @@ void Enemy::control(){
 
   if(waveA < target && waveB > target && waveC < waveB
     && *ammo == NULL)fire();
+
+  // move forward to player on
+  if(pos.x > SCREEN_W/2 && waveA > waveB && waveA>waveC){
+    vel.x-=10;
+  }
+  else if(pos.x <= SCREEN_W && waveA>waveB && waveB>target){
+    vel.x+=10;
+  }
+  else{
+    vel.x = 0;
+  }
   //restrict enemy inside the boundry
   clamp();
 }
