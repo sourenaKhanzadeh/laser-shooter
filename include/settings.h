@@ -8,6 +8,7 @@
 #include <iostream>
 #include <time.h>
 #include <math.h>
+#include <vector>
 #include <SFML/Graphics.hpp>
 
 

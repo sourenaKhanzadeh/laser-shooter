@@ -11,7 +11,7 @@
 class Stage{
 protected:
   Player *p;
-  Enemy **enemies;
+  std::vector<Enemy*> enemies;
   sf::RenderWindow *window;
 
 private:

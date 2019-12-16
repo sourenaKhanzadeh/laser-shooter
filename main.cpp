@@ -35,6 +35,7 @@ int main(){
 
 
   }
+  std::cout << "(:__G00DBYE__:)" << std::endl;
   return EXIT_SUCCESS;
 }
 
