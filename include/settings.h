@@ -30,6 +30,7 @@ typedef sf::Vector2f Vector2;
 #define DEFAULT_VEL 5.f
 #define P_SPEED 1.25f
 #define P_RAD 10.0f
+#define P_COLLIDER_SIZE 75
 
 
 // ENEMY SETTINGS

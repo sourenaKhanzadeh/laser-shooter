@@ -23,20 +23,37 @@ void Player::move(){
 
 
 void Player::draw(){
-  // Draw a circle
-  sf::CircleShape circle(radius);
-  circle.setFillColor(color);
+  // Replace with texture
+  sf::Texture texture;
+  if(!texture.loadFromFile("./res/sprites/player.png")){
+    std::cout << "<<<<Failed to load Player texture>>>>" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  // Collider
+  sf::RectangleShape rect(Vector2(-P_COLLIDER_SIZE,P_COLLIDER_SIZE));
+  rect.setOutlineColor(color);
+  rect.setFillColor(sf::Color(0,0,0,0));
+  rect.setOutlineThickness(1);
 
-  circle.move(pos);
+  rect.move(pos);
 
-  window->draw(circle);
+  // sprite
+  sf::Sprite sprite(texture);
+
+  sprite.setScale(Vector2(0.1f, 0.1f));
+  sprite.setRotation(90.f);
+
+  sprite.move(pos);
+
+  window->draw(sprite);
+  window->draw(rect);
 
 
 }
 
 void Player::fire(){
   ammo[0] = new Ammo(window, pos.x, pos.y, A_RAD);
-  ammo[0]->setPos(pos + Vector2(radius/2, radius/2));
+  ammo[0]->setPos(pos + Vector2(0, P_COLLIDER_SIZE/2));
 }
 
 

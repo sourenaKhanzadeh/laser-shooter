@@ -33,7 +33,7 @@ void Stage::update(){
 
   collisions();
 
-  if(enemies.size() == 0)
+  if(enemies.empty())
     init();
 
 }
