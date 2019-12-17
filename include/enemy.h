@@ -29,6 +29,7 @@ public:
     float getHealth(){return health;}
     void damage(float dmg);
     bool isDestroyed(){return destroy();}
+    Ammo **getAmmo(){return ammo;}
 
 };
 

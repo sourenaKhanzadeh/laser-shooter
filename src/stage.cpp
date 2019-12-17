@@ -16,6 +16,13 @@ void Stage::init(){
 void Stage::update(){
   if(p != NULL)
     p->update();
+
+  // GAME LOST
+  if(p->isDestroyed()){
+    delete p;
+    p = NULL;
+  }
+
   int i=0;
   for(auto enemy : enemies)
     if(enemy != NULL){

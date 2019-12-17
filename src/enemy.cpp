@@ -97,16 +97,17 @@ bool Enemy::destroy(){
   return health <= 0;
 }
 
-void onCollision(Player *obj1, Enemy *obj2){
-  float dist;
-  dist = collision(obj1->getAmmo()[0], obj2);
+void onCollision(Player *p, Enemy *e){
+  float distE;
+  distE = collision(p->getAmmo()[0], e);
 
   // std::cout << "distance: " << dist << "m." << std::endl;
-  if(dist < E_WIDTH){
+  if(distE < E_WIDTH){
     std::cout << "....Collided..." << std::endl;
-    std::cout << "Enemy Health: " << obj2->getHealth();
-    obj2->damage(obj1->getAmmo()[0]->dmg());
-    std::cout << " AFTER: " << obj2->getHealth() << std::endl;
-    obj1->destroyAmmo(true);
+    std::cout << "Enemy Health: " << e->getHealth();
+    e->damage(p->getAmmo()[0]->dmg());
+    std::cout << " AFTER: " << e->getHealth() << std::endl;
+    p->destroyAmmo(true);
   }
+
 }

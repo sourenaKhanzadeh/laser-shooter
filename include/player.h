@@ -10,6 +10,7 @@ private:
   float radius;
   Ammo **ammo;
   bool ammoIsDestroyed;
+  int health = 4;
 
   void draw();
   void control();
@@ -30,7 +31,11 @@ public:
 
   void destroyAmmo(bool destroyed=false){ammoIsDestroyed = destroyed;}
 
+  void damage(){health-=1;}
+  bool isDestroyed(){return health <=0;}
+  int getHealth(){return health;}
 
 };
+
 
 #endif
