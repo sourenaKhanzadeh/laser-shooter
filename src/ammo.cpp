@@ -22,12 +22,12 @@ Ammo::~Ammo(){
 }
 
 void Ammo::draw(){
-  sf::CircleShape circle(radius);
-  circle.setFillColor(color);
+  sf::RectangleShape rect(Vector2(radius*5, radius));
+  rect.setFillColor(color);
 
-  circle.move(pos);
+  rect.move(pos);
 
-  window->draw(circle);
+  window->draw(rect);
 
 }
 

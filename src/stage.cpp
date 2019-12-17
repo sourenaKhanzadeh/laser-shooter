@@ -43,6 +43,6 @@ void Stage::collisions(){
   if(p->getAmmo()[0] != NULL)
     for(auto enemy:enemies)
       if(enemy != NULL)
-        onCollision(p->getAmmo()[0], enemy);
+        onCollision(p, enemy);
 
 }

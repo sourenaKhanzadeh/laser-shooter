@@ -3,6 +3,7 @@
 
 #include "gameObject.h"
 #include "ammo.h"
+#include "player.h"
 
 
 class Enemy: public GameObject{
@@ -31,6 +32,6 @@ public:
 
 };
 
-void onCollision(Ammo *obj1, Enemy *obj2);
+void onCollision(Player *obj1, Enemy *obj2);
 
 #endif

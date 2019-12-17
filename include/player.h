@@ -9,6 +9,7 @@ class Player: public GameObject{
 private:
   float radius;
   Ammo **ammo;
+  bool ammoIsDestroyed;
 
   void draw();
   void control();
@@ -26,6 +27,8 @@ public:
   float getRadius(){return radius;}
 
   Ammo ** getAmmo(){return ammo;}
+
+  void destroyAmmo(bool destroyed=false){ammoIsDestroyed = destroyed;}
 
 
 };

@@ -58,9 +58,10 @@ void Player::fire(){
 
 
 void Player::clamp(Ammo **ammo){
-  if( ammo[0]->getPos().x > SCREEN_W || ammo[0]->getPos().x <0){
+  if( ammoIsDestroyed || (ammo[0]->getPos().x > SCREEN_W || ammo[0]->getPos().x <0)){
       delete ammo[0];
       ammo[0] = NULL;
+      destroyAmmo();
   }
 }
 
